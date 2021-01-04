@@ -106,9 +106,9 @@ namespace DevIO.Api.Controllers
             return _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorProdutosEndereco(id));
         }
 
-        //public async Task<FornecedorViewModel> ObterFornecedorEndereco(Guid id)
-        //{
-        //    return _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorEndereco(id));
-        //}
+        public async Task<FornecedorViewModel> ObterFornecedorEndereco(Guid id)
+        {
+            return _mapper.Map<FornecedorViewModel>(await _fornecedorRepository.ObterFornecedorEndereco(id));
+        }
     }
 }
