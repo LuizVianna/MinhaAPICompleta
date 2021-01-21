@@ -37,6 +37,10 @@ namespace DevIO.Api
 
             services.AddControllers();
 
+            services.Configure<ApiBehaviorOptions>(options => {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
             services.ResolveDependencies();
         }
 

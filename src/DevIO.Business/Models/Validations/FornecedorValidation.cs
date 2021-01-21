@@ -14,7 +14,7 @@ namespace DevIO.Business.Models.Validations
 
             When(f => f.TipoFornecedor == TipoFornecedor.PessoaFisica, () =>
             {
-                RuleFor(f => f.Documento.Length).Equal(CpfValidacao.TamanhoCpf)
+                RuleFor(f => f.Documento.Replace(".","").Replace("-","").Length).Equal(CpfValidacao.TamanhoCpf)
                     .WithMessage("O campo Documento precisa ter {ComparisonValue} caracteres e foi fornecido {PropertyValue}.");
                 RuleFor(f=> CpfValidacao.Validar(f.Documento)).Equal(true)
                     .WithMessage("O documento fornecido é inválido.");
