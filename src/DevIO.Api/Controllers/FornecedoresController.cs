@@ -2,6 +2,7 @@
 using DevIO.Api.ViewModels;
 using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace DevIO.Api.Controllers
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> ObterPorId(Guid id)
         {
-            var fornecedores = await ObterFornecedorEndereco(id);
+            var fornecedores = await ObterFornecedorProdutosEndereco(id);
 
             if (fornecedores == null) return NotFound();
 
